@@ -1,0 +1,218 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+.greeting-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 3rem;
+}
+
+.greeting-group-portrait {
+  display: none;
+}
+
+.switch-group {
+  display: flex;
+  justify-content: space-evenly;
+  width: 16rem;
+  position: absolute;
+  margin-top: 1rem;
+  top: 0.5rem;
+  left: calc(50vw - (256px / 2));
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 6.5rem;
+  animation-name: intro;
+  animation-duration: 0.75s;
+}
+
+.icon {
+  filter: var(--font-filter);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 1rem;
+  z-index: 1;
+  position: relative;
+  animation-name: intro;
+  animation-duration: 0.75s;
+  animation-delay: 0.5;
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.blob-container {
+  position: absolute;
+  top: 4rem;
+  left: calc(50vw - (300px / 2));
+  display: flex;
+  justify-content: center;
+  animation-name: blob;
+  animation-duration: 1.5s;
+  animation-delay: -0.5s;
+}
+
+.blob {
+  filter: var(--accent-filter);
+}
+
+.selfie {
+  position: relative;
+  margin: 3rem 3rem 5rem 3rem;
+  display: flex;
+  justify-content: center;
+  animation-name: intro;
+  animation-duration: 1s;
+}
+
+.contact-button:hover {
+  background-color: var(--tertiary-color);
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.contact-button {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: var(--tertiary-color);
+  border: 0.125rem solid var(--tertiary-color);
+  font-weight: 800;
+  border-radius: 0.5rem;
+  width: 60%;
+  height: 5rem;
+  padding: 1.25rem 0;
+  animation-name: intro;
+  animation-duration: 1s;
+  transition: background-color, color 0.3s;
+}
+
+.image {
+  border-radius: 10rem;
+}
+
+.portrait {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    height: 40rem;
+  }
+  .greeting {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 9%;
+    justify-content: space-between;
+  }
+  .greeting-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .greeting-group-portrait {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .switch-group {
+    left: calc(18vw - (256px / 2));
+  }
+  .blob-container {
+    position: absolute;
+    top: 12rem;
+    left: calc(18vw - (300px / 2));
+    animation-name: wideblob;
+    animation-duration: 1.5s;
+  }
+  .contact-button {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 80%;
+    z-index: 1;
+  }
+  .selfie {
+    display: none;
+  }
+  .portrait {
+    position: relative;
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-right: 0;
+    opacity: 0.95;
+    animation-name: portrait;
+    animation-duration: 1.5s;
+  }
+}
+
+@keyframes intro {
+  from {
+    left: 50%;
+    opacity: 0.1;
+  }
+  to {
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes portrait {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes blob {
+  from {
+    left: 50%;
+    opacity: 0.1;
+  }
+  to {
+    left: calc(50vw - (300px / 2));
+    opacity: 1;
+  }
+}
+
+@keyframes wideblob {
+  from {
+    left: 50%;
+    opacity: 0.1;
+  }
+  to {
+    left: calc(18vw - (300px / 2));
+    opacity: 1;
+  }
+}

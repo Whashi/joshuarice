@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 1.5rem 3rem;
+    color: var(--font-color);
+  }
+
+  .title {
+    z-index: 1;
+    position: relative;
+    top: -8rem;
+  }
+  
+  .blob-container {
+    position: relative;
+    height: 9rem;
+  }
+  
+  .blob {
+    filter: var(--accent-filter);
+  }

@@ -1,0 +1,107 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+  width: 90%;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cancel-button {
+  align-self: flex-end;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  color: var(--tertiary-color);
+  transition: background-color, color 0.3s;
+}
+
+.cancel-button:hover {
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.form-input {
+  padding: 0.3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+  height: 3rem;
+  width: 100%;
+}
+
+.form-label {
+  padding: 0.3rem;
+  margin: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.send-button {
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: var(--tertiary-color);
+  border: 0.125rem solid var(--tertiary-color);
+  font-weight: 800;
+  border-radius: 0.5rem;
+  width: 60%;
+  height: 5rem;
+  margin: 1rem 20%;
+  padding: 1.25rem 0;
+  transition: background-color, color 0.3s;
+}
+
+.send-button:hover {
+  background-color: var(--tertiary-color);
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 40rem;
+    left: calc(50% - 20rem);
+  }
+  .send-button {
+    width: 20%;
+    margin: 1rem 40%;
+    height: 3rem;
+    padding: 0;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
