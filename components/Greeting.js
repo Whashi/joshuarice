@@ -31,7 +31,7 @@ function Greeting(props) {
           </div>
         <div className={classes["blob-container"]}>
           <Image
-            src="/blob.svg"
+            src="/Blob.svg"
             alt="Blob SVG"
             height={250}
             width={300}
